@@ -1,0 +1,127 @@
+---
+title: "TALLERES1"
+author: "CARLA LÓPEZ AGUILERA"
+date: "2024-11-06"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+# Preliminares ------------------------------------------------------------
+# install.packages("pacman")
+
+
+#  Cargamos pacman 
+library(pacman)
+
+p_load(tidyverse,Titanic)
+
+#instalamos el paquete r4np 
+install.packages("devtools")       #devtools para descargar paquetes de github
+install_github("ddauber/r4np")
+library(r4np)
+
+r4np:: create_project_folder(  )
+
+# ponemos el nombre de la carpeta que queremos que nos cree// en el parentesis
+```
+
+
+```{r}
+# vamos a trabjar con funciones 
+# Crear un objeto que contenga un número 
+pepito <- 7 
+
+#creamos una funcion que calcula la mitad del valor
+f_mitad <-  function(x) { 
+  y <-  x/2
+return (y)}
+
+```
+
+
+```{r}
+#probar la funcion 
+
+f_mitad (pepito)
+```
+```{r}
+f_mitad (852)
+```
+
+
+```{r}
+f_potencia <- function  (a,b){
+  y <- a^b
+  return(y)}
+
+```
+
+
+```{r}
+f_potencia(pepito,pepito)
+```
+```{r}
+ f_potencia(b=3, a=4)
+```
+```{r}
+f_potencia(3,4)
+```
+
+```{r}
+
+# usamos pipes 
+# Calcular la media de 1 , 5 y 8  redondealo a 2 decimales 
+
+  mean( 1 , 5 , 8 ) %>% format(nsmall = 2)
+
+#esto es lo que he hecho yo 
+
+```
+```{r}
+#lo que ha hecho el profe 
+ v <- c (1 , 5 , 8 )
+media <- mean(v)
+redondear <- round ( media, digis =2) 
+redondear
+```
+
+
+#la respuesta del profe 
+
+```{r}
+c(1,5,8) %>% mean () %>%  round (digits=2)
+```
+```{r}
+mean(v) %>% round(2)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
